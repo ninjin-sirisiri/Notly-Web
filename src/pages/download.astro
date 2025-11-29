@@ -28,7 +28,7 @@ import ThemeToggle from '../components/ThemeToggle.astro';
 						<h2>Windows</h2>
 						<p class="platform-description">Windows 10以降に対応（64ビット）</p>
 						<div class="download-buttons">
-							<a href="/downloads/notly_1.0.0_x64-setup.exe" download="notly_1.0.0_x64-setup.exe" class="btn btn-primary download-btn">
+							<a href={`${import.meta.env.BASE_URL}/downloads/notly_1.0.0_x64-setup.exe`} download="notly_1.0.0_x64-setup.exe" class="btn btn-primary download-btn">
 								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M12 15V3M12 15L8 11M12 15L16 11M2 17L2 19C2 20.1046 2.89543 21 4 21L20 21C21.1046 21 22 20.1046 22 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 								</svg>
@@ -49,13 +49,13 @@ import ThemeToggle from '../components/ThemeToggle.astro';
 						<h2>macOS</h2>
 						<p class="platform-description">macOS 10.15以降に対応</p>
 						<div class="download-buttons">
-							<a href="/downloads/notly_1.0.0_x64.dmg" download="notly_1.0.0_x64.dmg" class="btn btn-primary download-btn">
+							<a href={`${import.meta.env.BASE_URL}/downloads/notly_1.0.0_x64.dmg`} download="notly_1.0.0_x64.dmg" class="btn btn-primary download-btn">
 								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M12 15V3M12 15L8 11M12 15L16 11M2 17L2 19C2 20.1046 2.89543 21 4 21L20 21C21.1046 21 22 20.1046 22 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 								</svg>
 								Intel版 (v1.0.0)
 							</a>
-							<a href="/downloads/notly_1.0.0_aarch64.dmg" download="notly_1.0.0_aarch64.dmg" class="btn btn-secondary download-btn">
+							<a href={`${import.meta.env.BASE_URL}/downloads/notly_1.0.0_aarch64.dmg`} download="notly_1.0.0_aarch64.dmg" class="btn btn-secondary download-btn">
 								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M12 15V3M12 15L8 11M12 15L16 11M2 17L2 19C2 20.1046 2.89543 21 4 21L20 21C21.1046 21 22 20.1046 22 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 								</svg>
@@ -79,13 +79,13 @@ import ThemeToggle from '../components/ThemeToggle.astro';
 							<div class="download-group">
 								<h4>AppImage</h4>
 								<div class="download-group-buttons">
-									<a href="/downloads/notly_1.0.0_amd64.AppImage" download="notly_1.0.0_amd64.AppImage" class="btn btn-primary download-btn">
+									<a href={`${import.meta.env.BASE_URL}/downloads/notly_1.0.0_amd64.AppImage`} download="notly_1.0.0_amd64.AppImage" class="btn btn-primary download-btn">
 										<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M12 15V3M12 15L8 11M12 15L16 11M2 17L2 19C2 20.1046 2.89543 21 4 21L20 21C21.1046 21 22 20.1046 22 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 										</svg>
 										x86_64
 									</a>
-									<a href="/downloads/notly_1.0.0_aarch64.AppImage" download="notly_1.0.0_aarch64.AppImage" class="btn btn-secondary download-btn">
+									<a href={`${import.meta.env.BASE_URL}/downloads/notly_1.0.0_aarch64.AppImage`} download="notly_1.0.0_aarch64.AppImage" class="btn btn-secondary download-btn">
 										<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M12 15V3M12 15L8 11M12 15L16 11M2 17L2 19C2 20.1046 2.89543 21 4 21L20 21C21.1046 21 22 20.1046 22 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 										</svg>
@@ -96,13 +96,13 @@ import ThemeToggle from '../components/ThemeToggle.astro';
 							<div class="download-group">
 								<h4>Debian/Ubuntu (.deb)</h4>
 								<div class="download-group-buttons">
-									<a href="/downloads/notly_1.0.0_amd64.deb" download="notly_1.0.0_amd64.deb" class="btn btn-secondary download-btn">
+									<a href={`${import.meta.env.BASE_URL}/downloads/notly_1.0.0_amd64.deb`} download="notly_1.0.0_amd64.deb" class="btn btn-secondary download-btn">
 										<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M12 15V3M12 15L8 11M12 15L16 11M2 17L2 19C2 20.1046 2.89543 21 4 21L20 21C21.1046 21 22 20.1046 22 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 										</svg>
 										x86_64
 									</a>
-									<a href="/downloads/notly_1.0.0_arm64.deb" download="notly_1.0.0_arm64.deb" class="btn btn-secondary download-btn">
+									<a href={`${import.meta.env.BASE_URL}/downloads/notly_1.0.0_arm64.deb`} download="notly_1.0.0_arm64.deb" class="btn btn-secondary download-btn">
 										<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M12 15V3M12 15L8 11M12 15L16 11M2 17L2 19C2 20.1046 2.89543 21 4 21L20 21C21.1046 21 22 20.1046 22 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 										</svg>
@@ -113,13 +113,13 @@ import ThemeToggle from '../components/ThemeToggle.astro';
 							<div class="download-group">
 								<h4>RPM (.rpm)</h4>
 								<div class="download-group-buttons">
-									<a href="/downloads/notly-1.0.0-1.x86_64.rpm" download="notly-1.0.0-1.x86_64.rpm" class="btn btn-secondary download-btn">
+									<a href={`${import.meta.env.BASE_URL}/downloads/notly-1.0.0-1.x86_64.rpm`} download="notly-1.0.0-1.x86_64.rpm" class="btn btn-secondary download-btn">
 										<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M12 15V3M12 15L8 11M12 15L16 11M2 17L2 19C2 20.1046 2.89543 21 4 21L20 21C21.1046 21 22 20.1046 22 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 										</svg>
 										x86_64
 									</a>
-									<a href="/downloads/notly-1.0.0-1.aarch64.rpm" download="notly-1.0.0-1.aarch64.rpm" class="btn btn-secondary download-btn">
+									<a href={`${import.meta.env.BASE_URL}/downloads/notly-1.0.0-1.aarch64.rpm`} download="notly-1.0.0-1.aarch64.rpm" class="btn btn-secondary download-btn">
 										<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M12 15V3M12 15L8 11M12 15L16 11M2 17L2 19C2 20.1046 2.89543 21 4 21L20 21C21.1046 21 22 20.1046 22 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 										</svg>

@@ -12,16 +12,16 @@ const currentYear = new Date().getFullYear();
       <div class="footer-links">
         <div class="link-group">
           <h4>プロダクト</h4>
-          <a href="/download">ダウンロード</a>
+          <a href={`${import.meta.env.BASE_URL}/download`}>ダウンロード</a>
           <a href="#features">機能</a>
-          <a href="/changelog">更新履歴</a>
+          <a href={`${import.meta.env.BASE_URL}/changelog`}>更新履歴</a>
         </div>
         <div class="link-group">
           <h4>サポート</h4>
-          <a href="/faq">FAQ</a>
-          <a href="/privacy">プライバシーポリシー</a>
-          <a href="/terms">利用規約</a>
-          <a href="/contact">お問い合わせ</a>
+          <a href={`${import.meta.env.BASE_URL}/faq`}>FAQ</a>
+          <a href={`${import.meta.env.BASE_URL}/privacy`}>プライバシーポリシー</a>
+          <a href={`${import.meta.env.BASE_URL}/terms`}>利用規約</a>
+          <a href={`${import.meta.env.BASE_URL}/contact`}>お問い合わせ</a>
         </div>
         <div class="link-group">
           <h4>ソーシャル</h4>

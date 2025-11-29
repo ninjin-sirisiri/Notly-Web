@@ -3,10 +3,10 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-		<link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
-		<link rel="apple-touch-icon" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/favicon.svg`} />
+		<link rel="icon" href={`${import.meta.env.BASE_URL}/favicon.svg`} type="image/svg+xml" />
+		<link rel="shortcut icon" href={`${import.meta.env.BASE_URL}/favicon.svg`} type="image/svg+xml" />
+		<link rel="apple-touch-icon" href={`${import.meta.env.BASE_URL}/favicon.svg`} />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content="Notlyは、習慣化に特化したシンプルで高速なデスクトップノートアプリです。Markdown対応、完全オフライン、美しいデザインで、あなたの書く習慣をサポートします。" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,16 +31,16 @@
 		<div class="layout-header">
 			<div class="container header-container">
 				<div class="logo">
-					<img src="/images/logo.png" alt="Notly" width="40" height="40" />
-					<a href="/">Notly</a>
+					<img src={`${import.meta.env.BASE_URL}/images/logo.png`} alt="Notly" width="40" height="40" />
+					<a href={`${import.meta.env.BASE_URL}`}>Notly</a>
 				</div>
 				<nav class="header-nav">
-					<a href="/" class="nav-link">ホーム</a>
-					<a href="/#features" class="nav-link">機能</a>
-					<a href="/download" class="nav-link">ダウンロード</a>
-					<a href="/changelog" class="nav-link">更新履歴</a>
-					<a href="/faq" class="nav-link">FAQ</a>
-					<a href="/contact" class="nav-link">お問い合わせ</a>
+					<a href={`${import.meta.env.BASE_URL}`} class="nav-link">ホーム</a>
+					<a href={`${import.meta.env.BASE_URL}#features`} class="nav-link">機能</a>
+					<a href={`${import.meta.env.BASE_URL}/download`} class="nav-link">ダウンロード</a>
+					<a href={`${import.meta.env.BASE_URL}/changelog`} class="nav-link">更新履歴</a>
+					<a href={`${import.meta.env.BASE_URL}/faq`} class="nav-link">FAQ</a>
+					<a href={`${import.meta.env.BASE_URL}/contact`} class="nav-link">お問い合わせ</a>
 				</nav>
 				<div class="header-right">
 					<a href="https://github.com/ninjin-sirisiri/Notly" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="GitHubリポジトリ">
