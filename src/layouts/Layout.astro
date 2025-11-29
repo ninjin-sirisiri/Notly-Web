@@ -1,22 +1,174 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="apple-touch-icon" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta name="description" content="Notlyは、習慣化に特化したシンプルで高速なデスクトップノートアプリです。Markdown対応、完全オフライン、美しいデザインで、あなたの書く習慣をサポートします。" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+		<title>Notly - 毎日続けられるノートアプリ</title>
+		<script is:inline>
+			// Immediate theme application to prevent flash
+			const theme = (() => {
+				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+					return localStorage.getItem('theme');
+				}
+				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+					return 'dark';
+				}
+				return 'light';
+			})();
+			document.documentElement.setAttribute('data-theme', theme);
+			</script>
 	</head>
 	<body>
+		<div class="layout-header">
+			<div class="container header-container">
+				<div class="logo">
+					<img src="/images/logo.png" alt="Notly" width="40" height="40" />
+					<a href="/">Notly</a>
+				</div>
+				<nav class="header-nav">
+					<a href="/" class="nav-link">ホーム</a>
+					<a href="/#features" class="nav-link">機能</a>
+					<a href="/download" class="nav-link">ダウンロード</a>
+					<a href="/changelog" class="nav-link">更新履歴</a>
+					<a href="/faq" class="nav-link">FAQ</a>
+					<a href="/contact" class="nav-link">お問い合わせ</a>
+				</nav>
+				<div class="header-right">
+					<a href="https://github.com/ninjin-sirisiri/Notly" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="GitHubリポジトリ">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z" fill="currentColor"/>
+						</svg>
+					</a>
+					<slot name="header-right" />
+				</div>
+			</div>
+		</div>
 		<slot />
 	</body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
+	.layout-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		padding: 1.5rem 0;
+		z-index: 100;
+		background: var(--bg-color);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		border-bottom: 1px solid var(--border-color);
+		transition: background-color 0.3s ease, border-color 0.3s ease;
 	}
+	
+	.header-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	.logo {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-weight: 700;
+		font-size: 1.5rem;
+		color: var(--text-color);
+		flex-shrink: 0;
+	}
+
+	.logo a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.header-nav {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		flex: 1;
+		justify-content: center;
+	}
+
+	.nav-link {
+		color: var(--text-color);
+		font-size: 0.95rem;
+		font-weight: 500;
+		text-decoration: none;
+		transition: color 0.2s ease;
+		position: relative;
+		padding: 0.25rem 0;
+	}
+
+	.nav-link:hover {
+		color: var(--accent-color);
+	}
+
+	.nav-link::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		height: 2px;
+		background: var(--accent-color);
+		transition: width 0.2s ease;
+	}
+
+	.nav-link:hover::after {
+		width: 100%;
+	}
+
+	.header-right {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		flex-shrink: 0;
+	}
+
+	.github-link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--text-color);
+		transition: color 0.2s ease, transform 0.2s ease;
+		padding: 0.5rem;
+		border-radius: 0.5rem;
+		text-decoration: none;
+	}
+
+	.github-link:hover {
+		color: var(--accent-color);
+		transform: scale(1.1);
+	}
+
+	.github-link svg {
+		width: 24px;
+		height: 24px;
+	}
+
+	@media (max-width: 768px) {
+		.header-nav {
+			display: none;
+		}
+
+		.header-container {
+			gap: 1rem;
+		}
+	}
+</style>
+
+<style is:global>
+	@import "../styles/global.css";
 </style>

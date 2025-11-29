@@ -1,0 +1,130 @@
+---
+---
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        惰性に負けず、<br />
+        毎日ノートが書ける
+      </h1>
+      <p class="hero-subtitle">
+        Notlyは、習慣化に特化したシンプルで高速なデスクトップノートアプリです。<br />
+        あなたの思考を妨げない、究極のプライベート空間。
+      </p>
+      <div class="hero-cta">
+        <a href="/download" class="btn btn-primary">ダウンロード (Windows)</a>
+        <a href="#features" class="btn btn-secondary">機能を見る</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="image-wrapper">
+        <img src="/images/screenshot_light.png" alt="Notly App Interface" class="screenshot-light" height="600" width="600" />
+        <img src="/images/screenshot_dark.png" alt="Notly App Interface" class="screenshot-dark" height="600" width="600" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 8rem 0 4rem;
+    position: relative;
+  }
+
+  /* Removed background glow */
+
+  .hero-content {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    color: var(--text-color);
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .hero-image {
+    display: flex;
+    justify-content: center;
+  }
+
+  .image-wrapper {
+    /* Removed 3D transform and rotation */
+    max-width: 900px;
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: var(--bg-color);
+    position: relative;
+  }
+  
+  .image-wrapper img {
+    width: 100%;
+    height: auto;
+    opacity: 0.9; /* Slightly muted image to blend better */
+  }
+
+  /* Show light screenshot in light mode, dark screenshot in dark mode */
+  .screenshot-light {
+    display: block;
+    position: relative;
+  }
+
+  .screenshot-dark {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  :global([data-theme="dark"]) .screenshot-light {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  :global([data-theme="dark"]) .screenshot-dark {
+    display: block;
+    position: relative;
+  }
+
+  /* Fallback for system preference */
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme="light"])) .screenshot-light {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    :global(:root:not([data-theme="light"])) .screenshot-dark {
+      display: block;
+      position: relative;
+    }
+  }
+
+  /* Removed glow element */
+  
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+  }
+</style>

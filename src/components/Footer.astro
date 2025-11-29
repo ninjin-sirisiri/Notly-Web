@@ -1,0 +1,97 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Notly</h3>
+        <p>毎日続けられる、<br>あなたのためのノートアプリ。</p>
+      </div>
+      <div class="footer-links">
+        <div class="link-group">
+          <h4>プロダクト</h4>
+          <a href="/download">ダウンロード</a>
+          <a href="#features">機能</a>
+          <a href="/changelog">更新履歴</a>
+        </div>
+        <div class="link-group">
+          <h4>サポート</h4>
+          <a href="/faq">FAQ</a>
+          <a href="/privacy">プライバシーポリシー</a>
+          <a href="/terms">利用規約</a>
+          <a href="/contact">お問い合わせ</a>
+        </div>
+        <div class="link-group">
+          <h4>ソーシャル</h4>
+          <a href="https://github.com/ninjin-sirisiri/Notly">GitHub</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {currentYear} Notly. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding: 4rem 0 2rem;
+    background: var(--bg-color); /* Match body bg */
+    border-top: 1px solid var(--border-color);
+    margin-top: 4rem;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-brand h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+  }
+
+  .footer-brand p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 4rem;
+    flex-wrap: wrap;
+  }
+
+  .link-group h4 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .link-group a {
+    display: block;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+
+  .link-group a:hover {
+    color: var(--text-color);
+  }
+
+  .footer-bottom {
+    text-align: left; /* Aligned left */
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+</style>

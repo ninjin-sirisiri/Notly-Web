@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+---
+
+<Layout>
+	<ThemeToggle slot="header-right" />
+	<main class="static-page">
+		<div class="container">
+			<header class="page-header">
+				<h1>お問い合わせ</h1>
+				<p class="subtitle">不具合報告や機能のご要望などがありましたら、以下の方法でご連絡ください。</p>
+			</header>
+
+			<section class="section">
+				<h2>GitHub Issues</h2>
+				<p>
+					開発は GitHub 上で公開されています。不具合報告や機能要望は、以下のリポジトリの Issues から登録できます。
+				</p>
+				<p>
+					<a href="https://github.com/ninjin-sirisiri/Notly" target="_blank" rel="noopener noreferrer" class="link">Notly GitHub リポジトリ</a>
+				</p>
+			</section>
+		</div>
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	.static-page {
+		padding-top: 8rem;
+		padding-bottom: 4rem;
+	}
+
+	.page-header {
+		margin-bottom: 2.5rem;
+	}
+
+	.page-header h1 {
+		font-size: 2rem;
+		margin-bottom: 0.75rem;
+		color: var(--text-color);
+	}
+
+	.subtitle {
+		color: var(--text-muted);
+		font-size: 0.95rem;
+	}
+
+	.section {
+		margin-bottom: 2rem;
+	}
+
+	.section h2 {
+		font-size: 1.25rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.section p {
+		color: var(--text-muted);
+		font-size: 0.95rem;
+		line-height: 1.6;
+	}
+
+	.link {
+		color: var(--accent-color);
+		text-decoration: underline;
+	}
+</style>

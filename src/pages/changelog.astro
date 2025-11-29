@@ -1,0 +1,261 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+---
+
+<Layout>
+	<ThemeToggle slot="header-right" />
+	<main class="changelog-page">
+		<div class="container">
+			<div class="changelog-header">
+				<h1>更新履歴</h1>
+				<p class="subtitle">Notlyのバージョン更新履歴をご確認いただけます。</p>
+			</div>
+
+			<div class="changelog-content">
+				<!-- Phase 4 -->
+				<section class="version-section">
+					<div class="version-header">
+						<h2>Phase 4</h2>
+						<span class="version-date">完了</span>
+					</div>
+					<ul class="changelog-list">
+						<li class="changelog-item completed">
+							<span class="item-icon">✓</span>
+							<span class="item-text">グローバルホットキー</span>
+						</li>
+						<li class="changelog-item completed">
+							<span class="item-icon">✓</span>
+							<span class="item-text">パフォーマンス最適化</span>
+						</li>
+						<li class="changelog-item completed">
+							<span class="item-icon">✓</span>
+							<span class="item-text">バックアップ機能</span>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Phase 3 -->
+				<section class="version-section">
+					<div class="version-header">
+						<h2>Phase 3</h2>
+						<span class="version-date">完了</span>
+					</div>
+					<ul class="changelog-list">
+						<li class="changelog-item completed">
+							<span class="item-icon">✓</span>
+							<span class="item-text">テンプレート機能</span>
+						</li>
+						<li class="changelog-item completed">
+							<span class="item-icon">✓</span>
+							<span class="item-text">タグ機能</span>
+						</li>
+						<li class="changelog-item completed">
+							<span class="item-icon">✓</span>
+							<span class="item-text">WYSIWYGエディタモード</span>
+						</li>
+						<li class="changelog-item completed">
+							<span class="item-icon">✓</span>
+							<span class="item-text">画像サポート</span>
+						</li>
+						<li class="changelog-item completed">
+							<span class="item-icon">✓</span>
+							<span class="item-text">ダークモード</span>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Phase 2 -->
+				<section class="version-section">
+					<div class="version-header">
+						<h2>Phase 2</h2>
+						<span class="version-date">完了</span>
+					</div>
+					<ul class="changelog-list">
+						<li class="changelog-item completed">
+							<span class="item-icon">✓</span>
+							<span class="item-text">連続日数カウント機能</span>
+						</li>
+						<li class="changelog-item completed">
+							<span class="item-icon">✓</span>
+							<span class="item-text">通知機能</span>
+						</li>
+						<li class="changelog-item completed">
+							<span class="item-icon">✓</span>
+							<span class="item-text">検索機能</span>
+						</li>
+						<li class="changelog-item completed">
+							<span class="item-icon">✓</span>
+							<span class="item-text">ノート間リンク機能</span>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Phase 1 (MVP) -->
+				<section class="version-section">
+					<div class="version-header">
+						<h2>Phase 1 (MVP)</h2>
+						<span class="version-date">完了</span>
+					</div>
+					<ul class="changelog-list">
+						<li class="changelog-item completed">
+							<span class="item-icon">✓</span>
+							<span class="item-text">プロジェクトセットアップ</span>
+						</li>
+						<li class="changelog-item completed">
+							<span class="item-icon">✓</span>
+							<span class="item-text">ローカルファイル保存</span>
+						</li>
+						<li class="changelog-item completed">
+							<span class="item-icon">✓</span>
+							<span class="item-text">基本的なノート作成・編集・削除機能</span>
+						</li>
+						<li class="changelog-item completed">
+							<span class="item-icon">✓</span>
+							<span class="item-text">Markdownエディタ</span>
+						</li>
+						<li class="changelog-item completed">
+							<span class="item-icon">✓</span>
+							<span class="item-text">フォルダ管理</span>
+						</li>
+					</ul>
+				</section>
+			</div>
+		</div>
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	.changelog-page {
+		padding-top: 8rem;
+		padding-bottom: 4rem;
+		min-height: 100vh;
+	}
+
+	.changelog-header {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	.changelog-header h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		margin-bottom: 1rem;
+		color: var(--text-color);
+	}
+
+	.subtitle {
+		font-size: 1.1rem;
+		color: var(--text-muted);
+		margin: 0;
+	}
+
+	.changelog-content {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.version-section {
+		margin-bottom: 3rem;
+		padding: 2rem;
+		background: var(--card-bg);
+		border: 1px solid var(--border-color);
+		border-radius: 0.75rem;
+		transition: all 0.2s ease;
+	}
+
+	.version-section:hover {
+		border-color: var(--accent-color);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+	}
+
+	[data-theme="dark"] .version-section:hover {
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+	}
+
+	.version-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 1.5rem;
+		padding-bottom: 1rem;
+		border-bottom: 1px solid var(--border-color);
+	}
+
+	.version-header h2 {
+		font-size: 1.75rem;
+		font-weight: 600;
+		color: var(--text-color);
+		margin: 0;
+	}
+
+	.version-date {
+		font-size: 0.9rem;
+		color: var(--text-muted);
+	}
+
+	.changelog-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.changelog-item {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		padding: 0.75rem;
+		border-radius: 0.5rem;
+		transition: background-color 0.2s ease;
+	}
+
+	.changelog-item:hover {
+		background: var(--hover-bg);
+	}
+
+	.item-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 1.5rem;
+		height: 1.5rem;
+		border-radius: 50%;
+		background: var(--accent-color);
+		color: white;
+		font-size: 0.75rem;
+		font-weight: 600;
+		flex-shrink: 0;
+	}
+
+	.item-text {
+		color: var(--text-color);
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+
+	.changelog-item.completed .item-text {
+		color: var(--text-color);
+	}
+
+	@media (max-width: 768px) {
+		.changelog-header h1 {
+			font-size: 2rem;
+		}
+
+		.version-header {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.5rem;
+		}
+
+		.version-section {
+			padding: 1.5rem;
+		}
+	}
+</style>
+

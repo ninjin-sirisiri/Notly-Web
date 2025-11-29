@@ -1,0 +1,455 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+---
+
+<Layout>
+	<ThemeToggle slot="header-right" />
+	<main class="download-page">
+		<div class="container">
+			<div class="download-header">
+				<h1>Notlyをダウンロード</h1>
+				<p class="subtitle">あなたのプラットフォームを選択して、Notlyを今すぐ始めましょう。</p>
+			</div>
+
+			<div class="download-content">
+				<!-- Windows -->
+				<section class="platform-card">
+					<div class="platform-icon">
+						<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M3 12V6.5L11 4V11.5L3 12Z" fill="currentColor"/>
+							<path d="M11 4L21 6.5V12L11 11.5V4Z" fill="currentColor"/>
+							<path d="M21 12V17.5L11 20V12.5L21 12Z" fill="currentColor"/>
+							<path d="M3 12V17.5L11 20V12.5L3 12Z" fill="currentColor"/>
+						</svg>
+					</div>
+					<div class="platform-info">
+						<h2>Windows</h2>
+						<p class="platform-description">Windows 10以降に対応（64ビット）</p>
+						<div class="download-buttons">
+							<a href="/downloads/notly_1.0.0_x64-setup.exe" download="notly_1.0.0_x64-setup.exe" class="btn btn-primary download-btn">
+								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12 15V3M12 15L8 11M12 15L16 11M2 17L2 19C2 20.1046 2.89543 21 4 21L20 21C21.1046 21 22 20.1046 22 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								ダウンロード (v1.0.0)
+							</a>
+						</div>
+					</div>
+				</section>
+
+				<!-- macOS -->
+				<section class="platform-card">
+					<div class="platform-icon">
+						<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.58C11.8 5.46 12.36 4.26 13 3.5Z" fill="currentColor"/>
+						</svg>
+					</div>
+					<div class="platform-info">
+						<h2>macOS</h2>
+						<p class="platform-description">macOS 10.15以降に対応</p>
+						<div class="download-buttons">
+							<a href="/downloads/notly_1.0.0_x64.dmg" download="notly_1.0.0_x64.dmg" class="btn btn-primary download-btn">
+								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12 15V3M12 15L8 11M12 15L16 11M2 17L2 19C2 20.1046 2.89543 21 4 21L20 21C21.1046 21 22 20.1046 22 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								Intel版 (v1.0.0)
+							</a>
+							<a href="/downloads/notly_1.0.0_aarch64.dmg" download="notly_1.0.0_aarch64.dmg" class="btn btn-secondary download-btn">
+								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12 15V3M12 15L8 11M12 15L16 11M2 17L2 19C2 20.1046 2.89543 21 4 21L20 21C21.1046 21 22 20.1046 22 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								Apple Silicon版
+							</a>
+						</div>
+					</div>
+				</section>
+
+				<!-- Linux -->
+				<section class="platform-card">
+					<div class="platform-icon">
+						<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12.504 0C10.521 0 8.937 1.05 8.937 2.1C8.937 2.73 9.309 3.3 9.912 3.675C8.715 4.2 7.875 5.25 7.875 6.3C7.875 7.35 8.715 8.4 9.912 8.925C9.309 9.3 8.937 9.87 8.937 10.5C8.937 11.55 10.521 12.6 12.504 12.6C14.487 12.6 16.071 11.55 16.071 10.5C16.071 9.87 15.699 9.3 15.096 8.925C16.293 8.4 17.133 7.35 17.133 6.3C17.133 5.25 16.293 4.2 15.096 3.675C15.699 3.3 16.071 2.73 16.071 2.1C16.071 1.05 14.487 0 12.504 0ZM12.504 1.05C13.608 1.05 14.616 1.575 15.096 2.1C14.616 2.625 13.608 3.15 12.504 3.15C11.4 3.15 10.392 2.625 9.912 2.1C10.392 1.575 11.4 1.05 12.504 1.05ZM9.912 4.725C10.392 5.25 11.4 5.775 12.504 5.775C13.608 5.775 14.616 5.25 15.096 4.725C15.576 5.25 16.071 5.775 16.071 6.3C16.071 6.825 15.576 7.35 15.096 7.875C14.616 7.35 13.608 6.825 12.504 6.825C11.4 6.825 10.392 7.35 9.912 7.875C9.432 7.35 8.937 6.825 8.937 6.3C8.937 5.775 9.432 5.25 9.912 4.725ZM9.912 9.45C10.392 9.975 11.4 10.5 12.504 10.5C13.608 10.5 14.616 9.975 15.096 9.45C15.576 9.975 16.071 10.5 16.071 11.025C16.071 11.55 15.576 12.075 15.096 12.6C14.616 12.075 13.608 11.55 12.504 11.55C11.4 11.55 10.392 12.075 9.912 12.6C9.432 12.075 8.937 11.55 8.937 11.025C8.937 10.5 9.432 9.975 9.912 9.45Z" fill="currentColor"/>
+						</svg>
+					</div>
+					<div class="platform-info">
+						<h2>Linux</h2>
+						<p class="platform-description">複数の形式とアーキテクチャに対応</p>
+						<div class="download-buttons">
+							<div class="download-group">
+								<h4>AppImage</h4>
+								<div class="download-group-buttons">
+									<a href="/downloads/notly_1.0.0_amd64.AppImage" download="notly_1.0.0_amd64.AppImage" class="btn btn-primary download-btn">
+										<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M12 15V3M12 15L8 11M12 15L16 11M2 17L2 19C2 20.1046 2.89543 21 4 21L20 21C21.1046 21 22 20.1046 22 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+										x86_64
+									</a>
+									<a href="/downloads/notly_1.0.0_aarch64.AppImage" download="notly_1.0.0_aarch64.AppImage" class="btn btn-secondary download-btn">
+										<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M12 15V3M12 15L8 11M12 15L16 11M2 17L2 19C2 20.1046 2.89543 21 4 21L20 21C21.1046 21 22 20.1046 22 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+										ARM64
+									</a>
+								</div>
+							</div>
+							<div class="download-group">
+								<h4>Debian/Ubuntu (.deb)</h4>
+								<div class="download-group-buttons">
+									<a href="/downloads/notly_1.0.0_amd64.deb" download="notly_1.0.0_amd64.deb" class="btn btn-secondary download-btn">
+										<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M12 15V3M12 15L8 11M12 15L16 11M2 17L2 19C2 20.1046 2.89543 21 4 21L20 21C21.1046 21 22 20.1046 22 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+										x86_64
+									</a>
+									<a href="/downloads/notly_1.0.0_arm64.deb" download="notly_1.0.0_arm64.deb" class="btn btn-secondary download-btn">
+										<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M12 15V3M12 15L8 11M12 15L16 11M2 17L2 19C2 20.1046 2.89543 21 4 21L20 21C21.1046 21 22 20.1046 22 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+										ARM64
+									</a>
+								</div>
+							</div>
+							<div class="download-group">
+								<h4>RPM (.rpm)</h4>
+								<div class="download-group-buttons">
+									<a href="/downloads/notly-1.0.0-1.x86_64.rpm" download="notly-1.0.0-1.x86_64.rpm" class="btn btn-secondary download-btn">
+										<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M12 15V3M12 15L8 11M12 15L16 11M2 17L2 19C2 20.1046 2.89543 21 4 21L20 21C21.1046 21 22 20.1046 22 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+										x86_64
+									</a>
+									<a href="/downloads/notly-1.0.0-1.aarch64.rpm" download="notly-1.0.0-1.aarch64.rpm" class="btn btn-secondary download-btn">
+										<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M12 15V3M12 15L8 11M12 15L16 11M2 17L2 19C2 20.1046 2.89543 21 4 21L20 21C21.1046 21 22 20.1046 22 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+										ARM64
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<div class="download-info">
+				<section class="info-section">
+					<h3>システム要件</h3>
+					<div class="info-grid">
+						<div class="info-item">
+							<h4>Windows</h4>
+							<ul>
+								<li>Windows 10以降</li>
+								<li>64ビットプロセッサ</li>
+								<li>100MB以上の空き容量</li>
+							</ul>
+						</div>
+						<div class="info-item">
+							<h4>macOS</h4>
+							<ul>
+								<li>macOS 10.15 (Catalina)以降</li>
+								<li>Apple SiliconまたはIntel</li>
+								<li>100MB以上の空き容量</li>
+							</ul>
+						</div>
+						<div class="info-item">
+							<h4>Linux</h4>
+							<ul>
+								<li>主要なディストリビューション対応</li>
+								<li>64ビットプロセッサ</li>
+								<li>100MB以上の空き容量</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section class="info-section">
+					<h3>インストール方法</h3>
+					<div class="install-steps">
+						<div class="step">
+							<span class="step-number">1</span>
+							<div class="step-content">
+								<h4>ダウンロード</h4>
+								<p>上記のボタンから、お使いのプラットフォーム用のファイルをダウンロードしてください。</p>
+							</div>
+						</div>
+						<div class="step">
+							<span class="step-number">2</span>
+							<div class="step-content">
+								<h4>インストール</h4>
+								<p>ダウンロードしたファイルを実行して、インストールを完了してください。</p>
+							</div>
+						</div>
+						<div class="step">
+							<span class="step-number">3</span>
+							<div class="step-content">
+								<h4>起動</h4>
+								<p>インストールが完了したら、Notlyを起動して使い始めましょう。</p>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	.download-page {
+		padding-top: 8rem;
+		padding-bottom: 4rem;
+		min-height: 100vh;
+	}
+
+	.download-header {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	.download-header h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		margin-bottom: 1rem;
+		color: var(--text-color);
+	}
+
+	.subtitle {
+		font-size: 1.1rem;
+		color: var(--text-muted);
+		margin: 0;
+	}
+
+	.download-content {
+		max-width: 900px;
+		margin: 0 auto 4rem;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.platform-card {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		padding: 2rem;
+		background: var(--card-bg);
+		border: 1px solid var(--border-color);
+		border-radius: 0.75rem;
+		transition: all 0.2s ease;
+	}
+
+	.platform-card:hover {
+		border-color: var(--accent-color);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+		transform: translateY(-2px);
+	}
+
+	[data-theme="dark"] .platform-card:hover {
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+	}
+
+	.platform-icon {
+		flex-shrink: 0;
+		width: 64px;
+		height: 64px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--accent-color);
+	}
+
+	.platform-info {
+		flex: 1;
+	}
+
+	.platform-info h2 {
+		font-size: 1.75rem;
+		font-weight: 600;
+		margin-bottom: 0.5rem;
+		color: var(--text-color);
+	}
+
+	.platform-description {
+		color: var(--text-muted);
+		margin-bottom: 1.5rem;
+		font-size: 0.95rem;
+	}
+
+	.download-buttons {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	.download-group {
+		width: 100%;
+		margin-bottom: 1.5rem;
+	}
+
+	.download-group:last-child {
+		margin-bottom: 0;
+	}
+
+	.download-group h4 {
+		font-size: 0.9rem;
+		font-weight: 600;
+		color: var(--text-muted);
+		margin-bottom: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.download-group-buttons {
+		display: flex;
+		gap: 0.75rem;
+		flex-wrap: wrap;
+	}
+
+	.download-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.75rem 1.5rem;
+		font-size: 1rem;
+	}
+
+	.file-size {
+		color: var(--text-muted);
+		font-size: 0.9rem;
+	}
+
+	.download-info {
+		max-width: 900px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.info-section h3 {
+		font-size: 2rem;
+		font-weight: 600;
+		margin-bottom: 2rem;
+		color: var(--text-color);
+	}
+
+	.info-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+	}
+
+	.info-item {
+		padding: 1.5rem;
+		background: var(--card-bg);
+		border: 1px solid var(--border-color);
+		border-radius: 0.5rem;
+	}
+
+	.info-item h4 {
+		font-size: 1.25rem;
+		font-weight: 600;
+		margin-bottom: 1rem;
+		color: var(--text-color);
+	}
+
+	.info-item ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.info-item li {
+		color: var(--text-muted);
+		margin-bottom: 0.5rem;
+		padding-left: 1.5rem;
+		position: relative;
+	}
+
+	.info-item li::before {
+		content: '•';
+		position: absolute;
+		left: 0;
+		color: var(--accent-color);
+		font-weight: bold;
+	}
+
+	.install-steps {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.step {
+		display: flex;
+		gap: 1.5rem;
+		align-items: flex-start;
+	}
+
+	.step-number {
+		flex-shrink: 0;
+		width: 2.5rem;
+		height: 2.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--accent-color);
+		color: white;
+		border-radius: 50%;
+		font-weight: 600;
+		font-size: 1.1rem;
+	}
+
+	.step-content h4 {
+		font-size: 1.25rem;
+		font-weight: 600;
+		margin-bottom: 0.5rem;
+		color: var(--text-color);
+	}
+
+	.step-content p {
+		color: var(--text-muted);
+		margin: 0;
+		line-height: 1.6;
+	}
+
+	@media (max-width: 768px) {
+		.download-header h1 {
+			font-size: 2rem;
+		}
+
+		.platform-card {
+			flex-direction: column;
+			text-align: center;
+			padding: 1.5rem;
+		}
+
+		.download-buttons {
+			justify-content: center;
+			width: 100%;
+		}
+
+		.download-group-buttons {
+			width: 100%;
+		}
+
+		.download-btn {
+			flex: 1;
+			min-width: 120px;
+			justify-content: center;
+		}
+
+		.info-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.step {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+	}
+</style>
+

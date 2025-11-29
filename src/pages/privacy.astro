@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+---
+
+<Layout>
+	<ThemeToggle slot="header-right" />
+	<main class="static-page">
+		<div class="container">
+			<header class="page-header">
+				<h1>プライバシーポリシー</h1>
+				<p class="subtitle">このページの内容は仮のものです。正式なポリシーは今後公開予定です。</p>
+			</header>
+
+			<section class="section">
+				<h2>1. 基本方針</h2>
+				<p>Notly は、ユーザーのプライバシーを尊重し、個人情報の適切な保護に努めます。本プライバシーポリシーは、その基本的な考え方を示すものです。</p>
+			</section>
+
+			<section class="section">
+				<h2>2. 収集する情報</h2>
+				<p>現時点では、ノートデータはすべてユーザーの端末内に保存され、外部サーバーに自動送信されることはありません。今後、解析やクラッシュレポート等を導入する場合は、本ポリシーを更新し、明示的にお知らせします。</p>
+			</section>
+
+			<section class="section">
+				<h2>3. 第三者への提供</h2>
+				<p>ユーザーの同意なく個人情報を第三者に提供することはありません。ただし、法令に基づく場合など、正当な理由がある場合を除きます。</p>
+			</section>
+
+			<section class="section">
+				<h2>4. 改定</h2>
+				<p>本プライバシーポリシーの内容は、必要に応じて予告なく変更される場合があります。重要な変更がある場合は、本サイト上で告知します。</p>
+			</section>
+		</div>
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	.static-page {
+		padding-top: 8rem;
+		padding-bottom: 4rem;
+	}
+
+	.page-header {
+		margin-bottom: 2.5rem;
+	}
+
+	.page-header h1 {
+		font-size: 2rem;
+		margin-bottom: 0.75rem;
+		color: var(--text-color);
+	}
+
+	.subtitle {
+		color: var(--text-muted);
+		font-size: 0.95rem;
+	}
+
+	.section {
+		margin-bottom: 2rem;
+	}
+
+	.section h2 {
+		font-size: 1.25rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.section p {
+		color: var(--text-muted);
+		font-size: 0.95rem;
+		line-height: 1.6;
+	}
+</style>

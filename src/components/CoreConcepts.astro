@@ -1,0 +1,74 @@
+---
+const concepts = [
+  {
+    title: "習慣化を支える",
+    description: "「書きたいときだけ」ではなく、「毎日続けられる習慣」としてデザインされています。",
+    icon: "📅"
+  },
+  {
+    title: "完全オフライン",
+    description: "データは全てローカルに保存。クラウド連携なしで、あなたのプライバシーを守ります。",
+    icon: "🔒"
+  },
+  {
+    title: "軽量・高速",
+    description: "Tauri + SQLiteによるネイティブ実装。ブラウザアプリにはない軽快な動作を実現。",
+    icon: "⚡"
+  }
+];
+---
+
+<section class="concepts">
+  <div class="container">
+    <div class="grid">
+      {concepts.map(concept => (
+        <div class="card flat-panel">
+          <div class="icon">{concept.icon}</div>
+          <h3>{concept.title}</h3>
+          <p>{concept.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .concepts {
+    padding: 2rem 0 4rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+    /* Removed hover transform and background change for strict minimalism, or keep subtle */
+    transition: border-color 0.2s ease;
+  }
+
+  .card:hover {
+    border-color: var(--text-muted);
+  }
+
+  .icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    /* Removed gradient text */
+    color: var(--text-color);
+  }
+
+  h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+  }
+
+  p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+</style>

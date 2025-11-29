@@ -1,0 +1,147 @@
+---
+---
+
+<section id="features" class="features">
+  <div class="container">
+    <div class="section-header">
+      <h2>パワフルな機能</h2>
+      <p>書くことに集中するための、こだわり抜いた機能群</p>
+    </div>
+
+    <div class="feature-grid">
+      <!-- Writing -->
+      <div class="feature-card flat-panel">
+        <h3>✍️ 書くことに集中</h3>
+        <ul>
+          <li><strong>Markdownエディタ</strong>: 見出し、リスト、コードブロックなど、直感的な記法で記述。</li>
+          <li><strong>ミニマルUI</strong>: 余計な装飾を排除し、エディタと最小限のツールバーのみを表示。</li>
+          <li><strong>自動保存</strong>: 入力のたびに保存されるため、保存忘れの心配はありません。</li>
+        </ul>
+      </div>
+
+      <!-- Organization -->
+      <div class="feature-card flat-panel">
+        <h3>📂 整理・管理</h3>
+        <ul>
+          <li><strong>階層フォルダ</strong>: ドラッグ&ドロップで自由に階層構造を作成可能。</li>
+          <li><strong>カスタム設定</strong>: フォルダごとにアイコンや色、並び替えルールを設定できます。</li>
+          <li><strong>ゴミ箱機能</strong>: 誤って削除しても復元可能。完全削除もワンクリックで。</li>
+        </ul>
+      </div>
+
+      <!-- Search -->
+      <div class="feature-card flat-panel">
+        <h3>🔍 検索・発見</h3>
+        <ul>
+          <li><strong>全文検索</strong>: タイトルだけでなく本文も含めた高速な全文検索。</li>
+          <li><strong>コンテキスト表示</strong>: 検索結果は親フォルダも含めて表示され、位置関係がすぐに分かります。</li>
+          <li><strong>タグ管理</strong>: タグによる横断的な整理と絞り込みが可能。</li>
+        </ul>
+      </div>
+
+      <!-- Habit -->
+      <div class="feature-card flat-panel">
+        <h3>🔥 習慣化サポート</h3>
+        <ul>
+          <li><strong>ストリーク記録</strong>: 連続執筆日数を自動記録し、モチベーションを維持。</li>
+          <li><strong>即座にフィードバック</strong>: 書くたびにストリークが更新され、達成感を得られます。</li>
+          <li><strong>将来の拡張</strong>: リマインダーや振り返りダッシュボードも実装予定。</li>
+        </ul>
+      </div>
+
+      <!-- Productivity -->
+      <div class="feature-card flat-panel">
+        <h3>⚡ 生産性向上</h3>
+        <ul>
+          <li><strong>テンプレート</strong>: 日報や議事録など、よく使うフォーマットを瞬時に呼び出し。</li>
+          <li><strong>グローバルショートカット</strong>: アプリが裏にあっても、キー一つでクイックノートを起動。</li>
+          <li><strong>キーカスタマイズ</strong>: 自分の使いやすいようにショートカットを変更可能。</li>
+        </ul>
+      </div>
+
+      <!-- Privacy -->
+      <div class="feature-card flat-panel">
+        <h3>🔒 プライバシー</h3>
+        <ul>
+          <li><strong>ローカル保存</strong>: データは全てあなたのPC内に。外部サーバーには送信されません。</li>
+          <li><strong>ファイルシステム準拠</strong>: バックアップや移行が容易なディレクトリ構造。</li>
+          <li><strong>将来の拡張</strong>: 暗号化やエクスポート機能も強化予定。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .features {
+    padding: 4rem 0;
+    /* Removed background gradient */
+  }
+
+  .section-header {
+    text-align: left; /* Aligned left for more minimal feel, or keep center. Let's try left */
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+  }
+
+  .section-header p {
+    color: var(--text-muted);
+    font-size: 1rem;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+    transition: border-color 0.2s ease;
+  }
+
+  .feature-card:hover {
+    border-color: var(--text-muted);
+  }
+
+  .feature-card h3 {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .feature-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .feature-card li {
+    margin-bottom: 0.75rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    padding-left: 1rem;
+    position: relative;
+    font-size: 0.95rem;
+  }
+
+  .feature-card li::before {
+    content: '—'; /* Minimal dash instead of bullet */
+    color: var(--border-color); /* Subtle dash */
+    position: absolute;
+    left: 0;
+  }
+
+  .feature-card strong {
+    color: var(--text-color);
+    font-weight: 500;
+  }
+</style>

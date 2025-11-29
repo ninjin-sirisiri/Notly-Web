@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+---
+
+<Layout>
+	<ThemeToggle slot="header-right" />
+	<main class="static-page">
+		<div class="container">
+			<header class="page-header">
+				<h1>利用規約</h1>
+				<p class="subtitle">このページの内容は仮の利用規約です。正式な文面は今後策定し、更新します。</p>
+			</header>
+
+			<section class="section">
+				<h2>1. 本サービスの提供</h2>
+				<p>Notly は、ノート作成および管理を目的としたデスクトップアプリケーションです。本サービスは現状有姿で提供され、いかなる保証も行いません。</p>
+			</section>
+
+			<section class="section">
+				<h2>2. 禁止事項</h2>
+				<p>本サービスを不正な目的で利用すること、法令や公序良俗に反する目的で利用することは禁止されています。</p>
+			</section>
+
+			<section class="section">
+				<h2>3. 免責事項</h2>
+				<p>本サービスの利用により生じたいかなる損害に対しても、開発者は責任を負わないものとします。重要な情報のバックアップは、ユーザーご自身の責任で行ってください。</p>
+			</section>
+
+			<section class="section">
+				<h2>4. 規約の変更</h2>
+				<p>開発者は、必要に応じて本利用規約を変更することができます。重要な変更がある場合は、本サイト上で告知します。</p>
+			</section>
+		</div>
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	.static-page {
+		padding-top: 8rem;
+		padding-bottom: 4rem;
+	}
+
+	.page-header {
+		margin-bottom: 2.5rem;
+	}
+
+	.page-header h1 {
+		font-size: 2rem;
+		margin-bottom: 0.75rem;
+		color: var(--text-color);
+	}
+
+	.subtitle {
+		color: var(--text-muted);
+		font-size: 0.95rem;
+	}
+
+	.section {
+		margin-bottom: 2rem;
+	}
+
+	.section h2 {
+		font-size: 1.25rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.section p {
+		color: var(--text-muted);
+		font-size: 0.95rem;
+		line-height: 1.6;
+	}
+</style>
