@@ -1,3 +1,20 @@
+---
+interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+}
+
+const { 
+	title = "Notly - 毎日続けられるノートアプリ",
+	description = "Notlyは、習慣化に特化したシンプルで高速なデスクトップノートアプリです。Markdown対応、完全オフライン、美しいデザインで、あなたの書く習慣をサポートします。",
+	image = "/images/screenshot_dark.png"
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImageURL = new URL(image, Astro.url);
+---
+
 <!doctype html>
 <html lang="ja">
 	<head>
@@ -9,11 +26,33 @@
 		<link rel="shortcut icon" href={`${import.meta.env.BASE_URL}/favicon.svg`} type="image/svg+xml" />
 		<link rel="apple-touch-icon" href={`${import.meta.env.BASE_URL}/favicon.svg`} />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="Notlyは、習慣化に特化したシンプルで高速なデスクトップノートアプリです。Markdown対応、完全オフライン、美しいデザインで、あなたの書く習慣をサポートします。" />
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- Primary Meta Tags -->
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={socialImageURL} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={socialImageURL} />
+
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-		<title>Notly - 毎日続けられるノートアプリ</title>
+		
 		<script is:inline>
 			// Immediate theme application to prevent flash
 			const theme = (() => {

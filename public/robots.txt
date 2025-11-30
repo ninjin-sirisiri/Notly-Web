@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ninjin-sirisiri.github.io/Notly-Web/sitemap-index.xml
