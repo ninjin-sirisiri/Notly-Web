@@ -1,73 +1,138 @@
 ---
+import { getLocale } from '../lib/i18n';
+
+const locale = getLocale(Astro.url);
+const copy = {
+  ja: {
+    title: "パワフルな機能",
+    subtitle: "書くことに集中するための、こだわり抜いた機能群",
+    sections: [
+      {
+        title: "✍️ 書くことに集中",
+        items: [
+          { label: "Markdownエディタ", text: "見出し、リスト、コードブロックなど、直感的な記法で記述。" },
+          { label: "ミニマルUI", text: "余計な装飾を排除し、エディタと最小限のツールバーのみを表示。" },
+          { label: "自動保存", text: "入力のたびに保存されるため、保存忘れの心配はありません。" }
+        ]
+      },
+      {
+        title: "📂 整理・管理",
+        items: [
+          { label: "階層フォルダ", text: "ドラッグ&ドロップで自由に階層構造を作成可能。" },
+          { label: "カスタム設定", text: "フォルダごとにアイコンや色、並び替えルールを設定できます。" },
+          { label: "ゴミ箱機能", text: "誤って削除しても復元可能。完全削除もワンクリックで。" }
+        ]
+      },
+      {
+        title: "🔍 検索・発見",
+        items: [
+          { label: "全文検索", text: "タイトルだけでなく本文も含めた高速な全文検索。" },
+          { label: "コンテキスト表示", text: "検索結果は親フォルダも含めて表示され、位置関係がすぐに分かります。" },
+          { label: "タグ管理", text: "タグによる横断的な整理と絞り込みが可能。" }
+        ]
+      },
+      {
+        title: "🔥 習慣化サポート",
+        items: [
+          { label: "ストリーク記録", text: "連続執筆日数を自動記録し、モチベーションを維持。" },
+          { label: "即座にフィードバック", text: "書くたびにストリークが更新され、達成感を得られます。" },
+          { label: "将来の拡張", text: "リマインダーや振り返りダッシュボードも実装予定。" }
+        ]
+      },
+      {
+        title: "⚡ 生産性向上",
+        items: [
+          { label: "テンプレート", text: "日報や議事録など、よく使うフォーマットを瞬時に呼び出し。" },
+          { label: "グローバルショートカット", text: "アプリが裏にあっても、キー一つでクイックノートを起動。" },
+          { label: "キーカスタマイズ", text: "自分の使いやすいようにショートカットを変更可能。" }
+        ]
+      },
+      {
+        title: "🔒 プライバシー",
+        items: [
+          { label: "ローカル保存", text: "データは全てあなたのPC内に。外部サーバーには送信されません。" },
+          { label: "ファイルシステム準拠", text: "バックアップや移行が容易なディレクトリ構造。" },
+          { label: "将来の拡張", text: "暗号化やエクスポート機能も強化予定。" }
+        ]
+      }
+    ]
+  },
+  en: {
+    title: "Powerful features",
+    subtitle: "Everything you need to stay focused on writing",
+    sections: [
+      {
+        title: "✍️ Focus on writing",
+        items: [
+          { label: "Markdown editor", text: "Write with intuitive syntax for headings, lists, and code blocks." },
+          { label: "Minimal UI", text: "No clutter—just the editor and the tools you need." },
+          { label: "Auto-save", text: "Every keystroke is saved, so you never lose your work." }
+        ]
+      },
+      {
+        title: "📂 Organize & manage",
+        items: [
+          { label: "Nested folders", text: "Drag and drop to build the structure that fits your flow." },
+          { label: "Custom settings", text: "Set icons, colors, and sorting rules per folder." },
+          { label: "Trash", text: "Restore deleted notes or remove them permanently with one click." }
+        ]
+      },
+      {
+        title: "🔍 Search & discover",
+        items: [
+          { label: "Full-text search", text: "Search inside titles and content at lightning speed." },
+          { label: "Context display", text: "Results include parent folders so you know exactly where things live." },
+          { label: "Tag management", text: "Use tags to filter and organize across folders." }
+        ]
+      },
+      {
+        title: "🔥 Habit support",
+        items: [
+          { label: "Streak tracking", text: "Automatically record consecutive writing days to keep you motivated." },
+          { label: "Instant feedback", text: "Every session updates your streak for a quick sense of progress." },
+          { label: "Future expansions", text: "Reminders and review dashboards are planned." }
+        ]
+      },
+      {
+        title: "⚡ Boost productivity",
+        items: [
+          { label: "Templates", text: "Pull up daily reports or meeting notes in seconds." },
+          { label: "Global shortcuts", text: "Launch quick notes with a single key from anywhere." },
+          { label: "Key customization", text: "Change shortcuts to fit your own workflow." }
+        ]
+      },
+      {
+        title: "🔒 Privacy",
+        items: [
+          { label: "Local storage", text: "Your data stays on your PC—nothing is sent to external servers." },
+          { label: "File-system friendly", text: "An easy directory structure makes backup and migration simple." },
+          { label: "Future expansions", text: "Encryption and export tools are on the roadmap." }
+        ]
+      }
+    ]
+  }
+};
+const t = copy[locale];
 ---
 
 <section id="features" class="features">
   <div class="container">
     <div class="section-header">
-      <h2>パワフルな機能</h2>
-      <p>書くことに集中するための、こだわり抜いた機能群</p>
+      <h2>{t.title}</h2>
+      <p>{t.subtitle}</p>
     </div>
 
     <div class="feature-grid">
-      <!-- Writing -->
-      <div class="feature-card flat-panel">
-        <h3>✍️ 書くことに集中</h3>
-        <ul>
-          <li><strong>Markdownエディタ</strong>: 見出し、リスト、コードブロックなど、直感的な記法で記述。</li>
-          <li><strong>ミニマルUI</strong>: 余計な装飾を排除し、エディタと最小限のツールバーのみを表示。</li>
-          <li><strong>自動保存</strong>: 入力のたびに保存されるため、保存忘れの心配はありません。</li>
-        </ul>
-      </div>
-
-      <!-- Organization -->
-      <div class="feature-card flat-panel">
-        <h3>📂 整理・管理</h3>
-        <ul>
-          <li><strong>階層フォルダ</strong>: ドラッグ&ドロップで自由に階層構造を作成可能。</li>
-          <li><strong>カスタム設定</strong>: フォルダごとにアイコンや色、並び替えルールを設定できます。</li>
-          <li><strong>ゴミ箱機能</strong>: 誤って削除しても復元可能。完全削除もワンクリックで。</li>
-        </ul>
-      </div>
-
-      <!-- Search -->
-      <div class="feature-card flat-panel">
-        <h3>🔍 検索・発見</h3>
-        <ul>
-          <li><strong>全文検索</strong>: タイトルだけでなく本文も含めた高速な全文検索。</li>
-          <li><strong>コンテキスト表示</strong>: 検索結果は親フォルダも含めて表示され、位置関係がすぐに分かります。</li>
-          <li><strong>タグ管理</strong>: タグによる横断的な整理と絞り込みが可能。</li>
-        </ul>
-      </div>
-
-      <!-- Habit -->
-      <div class="feature-card flat-panel">
-        <h3>🔥 習慣化サポート</h3>
-        <ul>
-          <li><strong>ストリーク記録</strong>: 連続執筆日数を自動記録し、モチベーションを維持。</li>
-          <li><strong>即座にフィードバック</strong>: 書くたびにストリークが更新され、達成感を得られます。</li>
-          <li><strong>将来の拡張</strong>: リマインダーや振り返りダッシュボードも実装予定。</li>
-        </ul>
-      </div>
-
-      <!-- Productivity -->
-      <div class="feature-card flat-panel">
-        <h3>⚡ 生産性向上</h3>
-        <ul>
-          <li><strong>テンプレート</strong>: 日報や議事録など、よく使うフォーマットを瞬時に呼び出し。</li>
-          <li><strong>グローバルショートカット</strong>: アプリが裏にあっても、キー一つでクイックノートを起動。</li>
-          <li><strong>キーカスタマイズ</strong>: 自分の使いやすいようにショートカットを変更可能。</li>
-        </ul>
-      </div>
-
-      <!-- Privacy -->
-      <div class="feature-card flat-panel">
-        <h3>🔒 プライバシー</h3>
-        <ul>
-          <li><strong>ローカル保存</strong>: データは全てあなたのPC内に。外部サーバーには送信されません。</li>
-          <li><strong>ファイルシステム準拠</strong>: バックアップや移行が容易なディレクトリ構造。</li>
-          <li><strong>将来の拡張</strong>: 暗号化やエクスポート機能も強化予定。</li>
-        </ul>
-      </div>
+      {t.sections.map((section) => (
+        <div class="feature-card flat-panel">
+          <h3>{section.title}</h3>
+          <ul>
+            {section.items.map((item) => (
+              <li><strong>{item.label}</strong>: {item.text}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
   </div>
 </section>

@@ -2,39 +2,80 @@
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
+import { getLocale } from '../lib/i18n';
+
+const locale = getLocale(Astro.url);
+const copy = {
+	ja: {
+		title: "プライバシーポリシー - Notly",
+		description: "Notlyのプライバシーポリシー。個人情報の取り扱いに関する基本方針について説明します。",
+		headerTitle: "プライバシーポリシー",
+		headerSubtitle: "このページの内容は仮のものです。正式なポリシーは今後公開予定です。",
+		sections: [
+			{
+				title: "1. 基本方針",
+				text: "Notly は、ユーザーのプライバシーを尊重し、個人情報の適切な保護に努めます。本プライバシーポリシーは、その基本的な考え方を示すものです。"
+			},
+			{
+				title: "2. 収集する情報",
+				text: "現時点では、ノートデータはすべてユーザーの端末内に保存され、外部サーバーに自動送信されることはありません。今後、解析やクラッシュレポート等を導入する場合は、本ポリシーを更新し、明示的にお知らせします。"
+			},
+			{
+				title: "3. 第三者への提供",
+				text: "ユーザーの同意なく個人情報を第三者に提供することはありません。ただし、法令に基づく場合など、正当な理由がある場合を除きます。"
+			},
+			{
+				title: "4. 改定",
+				text: "本プライバシーポリシーの内容は、必要に応じて予告なく変更される場合があります。重要な変更がある場合は、本サイト上で告知します。"
+			}
+		]
+	},
+	en: {
+		title: "Privacy Policy - Notly",
+		description: "The Notly privacy policy explains how we handle personal information.",
+		headerTitle: "Privacy Policy",
+		headerSubtitle: "This page is a placeholder. The official policy will be published later.",
+		sections: [
+			{
+				title: "1. Our policy",
+				text: "Notly respects user privacy and strives to protect personal information. This policy outlines our core principles."
+			},
+			{
+				title: "2. Information we collect",
+				text: "At this time, all notes are stored locally and are not sent to external servers. If we add analytics or crash reporting, we will update this policy and notify users."
+			},
+			{
+				title: "3. Sharing with third parties",
+				text: "We do not share personal information with third parties without consent, except when required by law or for legitimate reasons."
+			},
+			{
+				title: "4. Updates",
+				text: "This policy may be updated without notice. Significant changes will be announced on this site."
+			}
+		]
+	}
+};
+const t = copy[locale];
 ---
 
 <Layout
-	title="プライバシーポリシー - Notly"
-	description="Notlyのプライバシーポリシー。個人情報の取り扱いに関する基本方針について説明します。"
+	title={t.title}
+	description={t.description}
 >
 	<ThemeToggle slot="header-right" />
 	<main class="static-page">
 		<div class="container">
 			<header class="page-header">
-				<h1>プライバシーポリシー</h1>
-				<p class="subtitle">このページの内容は仮のものです。正式なポリシーは今後公開予定です。</p>
+				<h1>{t.headerTitle}</h1>
+				<p class="subtitle">{t.headerSubtitle}</p>
 			</header>
 
-			<section class="section">
-				<h2>1. 基本方針</h2>
-				<p>Notly は、ユーザーのプライバシーを尊重し、個人情報の適切な保護に努めます。本プライバシーポリシーは、その基本的な考え方を示すものです。</p>
-			</section>
-
-			<section class="section">
-				<h2>2. 収集する情報</h2>
-				<p>現時点では、ノートデータはすべてユーザーの端末内に保存され、外部サーバーに自動送信されることはありません。今後、解析やクラッシュレポート等を導入する場合は、本ポリシーを更新し、明示的にお知らせします。</p>
-			</section>
-
-			<section class="section">
-				<h2>3. 第三者への提供</h2>
-				<p>ユーザーの同意なく個人情報を第三者に提供することはありません。ただし、法令に基づく場合など、正当な理由がある場合を除きます。</p>
-			</section>
-
-			<section class="section">
-				<h2>4. 改定</h2>
-				<p>本プライバシーポリシーの内容は、必要に応じて予告なく変更される場合があります。重要な変更がある場合は、本サイト上で告知します。</p>
-			</section>
+			{t.sections.map((section) => (
+				<section class="section">
+					<h2>{section.title}</h2>
+					<p>{section.text}</p>
+				</section>
+			))}
 		</div>
 	</main>
 	<Footer />

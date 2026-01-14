@@ -1,19 +1,41 @@
 ---
+import { getLocale, withLang } from '../lib/i18n';
+
+const locale = getLocale(Astro.url);
+const copy = {
+  ja: {
+    titleLine1: "惰性に負けず、",
+    titleLine2: "毎日ノートが書ける",
+    subtitleLine1: "Notlyは、習慣化に特化したシンプルで高速なデスクトップノートアプリです。",
+    subtitleLine2: "あなたの思考を妨げない、究極のプライベート空間。",
+    downloadCta: "ダウンロード (Windows)",
+    featuresCta: "機能を見る"
+  },
+  en: {
+    titleLine1: "Write every day,",
+    titleLine2: "without losing momentum",
+    subtitleLine1: "Notly is a simple, fast desktop note app built for habit-forming writing.",
+    subtitleLine2: "A private space that never gets in the way of your thoughts.",
+    downloadCta: "Download (Windows)",
+    featuresCta: "See features"
+  }
+};
+const t = copy[locale];
 ---
 <section class="hero">
   <div class="container">
     <div class="hero-content">
       <h1 class="hero-title">
-        惰性に負けず、<br />
-        毎日ノートが書ける
+        {t.titleLine1}<br />
+        {t.titleLine2}
       </h1>
       <p class="hero-subtitle">
-        Notlyは、習慣化に特化したシンプルで高速なデスクトップノートアプリです。<br />
-        あなたの思考を妨げない、究極のプライベート空間。
+        {t.subtitleLine1}<br />
+        {t.subtitleLine2}
       </p>
       <div class="hero-cta">
-        <a href={`${import.meta.env.BASE_URL}/download`} class="btn btn-primary">ダウンロード (Windows)</a>
-        <a href="#features" class="btn btn-secondary">機能を見る</a>
+        <a href={withLang(`${import.meta.env.BASE_URL}/download/`, locale)} class="btn btn-primary">{t.downloadCta}</a>
+        <a href={withLang(`${import.meta.env.BASE_URL}#features`, locale)} class="btn btn-secondary">{t.featuresCta}</a>
       </div>
     </div>
     <div class="hero-image">

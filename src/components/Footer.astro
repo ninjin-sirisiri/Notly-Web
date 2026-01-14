@@ -1,5 +1,41 @@
 ---
+import { getLocale, withLang } from '../lib/i18n';
+
 const currentYear = new Date().getFullYear();
+const locale = getLocale(Astro.url);
+const copy = {
+  ja: {
+    taglineLine1: "毎日続けられる、",
+    taglineLine2: "あなたのためのノートアプリ。",
+    product: "プロダクト",
+    support: "サポート",
+    social: "ソーシャル",
+    download: "ダウンロード",
+    features: "機能",
+    changelog: "更新履歴",
+    faq: "FAQ",
+    privacy: "プライバシーポリシー",
+    terms: "利用規約",
+    contact: "お問い合わせ",
+    rights: "All rights reserved."
+  },
+  en: {
+    taglineLine1: "A daily note app",
+    taglineLine2: "made for your routine.",
+    product: "Product",
+    support: "Support",
+    social: "Social",
+    download: "Download",
+    features: "Features",
+    changelog: "Changelog",
+    faq: "FAQ",
+    privacy: "Privacy Policy",
+    terms: "Terms of Service",
+    contact: "Contact",
+    rights: "All rights reserved."
+  }
+};
+const t = copy[locale];
 ---
 
 <footer class="footer">
@@ -7,30 +43,30 @@ const currentYear = new Date().getFullYear();
     <div class="footer-content">
       <div class="footer-brand">
         <h3>Notly</h3>
-        <p>毎日続けられる、<br>あなたのためのノートアプリ。</p>
+        <p>{t.taglineLine1}<br />{t.taglineLine2}</p>
       </div>
       <div class="footer-links">
         <div class="link-group">
-          <h4>プロダクト</h4>
-          <a href={`${import.meta.env.BASE_URL}/download`}>ダウンロード</a>
-          <a href="#features">機能</a>
-          <a href={`${import.meta.env.BASE_URL}/changelog`}>更新履歴</a>
+          <h4>{t.product}</h4>
+          <a href={withLang(`${import.meta.env.BASE_URL}/download/`, locale)}>{t.download}</a>
+          <a href={withLang(`${import.meta.env.BASE_URL}#features`, locale)}>{t.features}</a>
+          <a href={withLang(`${import.meta.env.BASE_URL}/changelog/`, locale)}>{t.changelog}</a>
         </div>
         <div class="link-group">
-          <h4>サポート</h4>
-          <a href={`${import.meta.env.BASE_URL}/faq`}>FAQ</a>
-          <a href={`${import.meta.env.BASE_URL}/privacy`}>プライバシーポリシー</a>
-          <a href={`${import.meta.env.BASE_URL}/terms`}>利用規約</a>
-          <a href={`${import.meta.env.BASE_URL}/contact`}>お問い合わせ</a>
+          <h4>{t.support}</h4>
+          <a href={withLang(`${import.meta.env.BASE_URL}/faq/`, locale)}>{t.faq}</a>
+          <a href={withLang(`${import.meta.env.BASE_URL}/privacy/`, locale)}>{t.privacy}</a>
+          <a href={withLang(`${import.meta.env.BASE_URL}/terms/`, locale)}>{t.terms}</a>
+          <a href={withLang(`${import.meta.env.BASE_URL}/contact/`, locale)}>{t.contact}</a>
         </div>
         <div class="link-group">
-          <h4>ソーシャル</h4>
+          <h4>{t.social}</h4>
           <a href="https://github.com/ninjin-sirisiri/Notly">GitHub</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; {currentYear} Notly. All rights reserved.</p>
+      <p>&copy; {currentYear} Notly. {t.rights}</p>
     </div>
   </div>
 </footer>

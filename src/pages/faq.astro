@@ -2,59 +2,141 @@
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
+import { getLocale } from '../lib/i18n';
+
+const locale = getLocale(Astro.url);
+const copy = {
+	ja: {
+		title: "よくある質問 - Notly",
+		description: "Notlyのインストール、使い方、バックアップなどに関するよくある質問と回答です。",
+		headerTitle: "よくある質問",
+		headerSubtitle: "Notly のインストールや使い方について、よくいただく質問と回答をまとめました。",
+		sections: [
+			{
+				title: "インストール・動作環境",
+				items: [
+					{
+						question: "Q. 対応しているOSは何ですか？",
+						answer: "Windows / macOS / Linux に対応しています。詳細なバージョンやアーキテクチャは「ダウンロード」ページをご確認ください。"
+					},
+					{
+						question: "Q. アプリが起動しません。",
+						answer: "お使いのOSが動作要件を満たしているかをご確認ください。それでも解決しない場合は、お問い合わせページからご連絡ください。"
+					}
+				]
+			},
+			{
+				title: "データとバックアップ",
+				items: [
+					{
+						question: "Q. ノートのデータはどこに保存されますか？",
+						answer: "すべてのノートはローカル環境に保存されます。今後、保存場所やバックアップ方法を公式ドキュメントとして整備していく予定です。"
+					},
+					{
+						question: "Q. 別のPCに引っ越すにはどうすればよいですか？",
+						answer: "現在は、データフォルダを手動でコピーすることで移行できます。今後、より簡単な移行方法を提供予定です。"
+					}
+				]
+			},
+			{
+				title: "ライセンス・料金",
+				items: [
+					{
+						question: "Q. 利用料金はかかりますか？",
+						answer: "現時点では無料でご利用いただけます。将来的に変更がある場合は、このサイトおよびアプリ内で事前にお知らせします。"
+					}
+				]
+			},
+			{
+				title: "その他",
+				items: [
+					{
+						question: "Q. 不具合報告や機能要望はどこから送れますか？",
+						answer: "お問い合わせページ、または GitHub リポジトリの Issues からご連絡ください。"
+					}
+				]
+			}
+		]
+	},
+	en: {
+		title: "FAQ - Notly",
+		description: "Answers to common questions about installing, using, and backing up Notly.",
+		headerTitle: "Frequently Asked Questions",
+		headerSubtitle: "Find answers about installing and using Notly below.",
+		sections: [
+			{
+				title: "Installation & compatibility",
+				items: [
+					{
+						question: "Q. Which operating systems are supported?",
+						answer: "Windows, macOS, and Linux are supported. Check the Download page for specific versions and architectures."
+					},
+					{
+						question: "Q. The app won’t launch.",
+						answer: "Confirm that your OS meets the requirements. If the issue persists, contact us through the Contact page."
+					}
+				]
+			},
+			{
+				title: "Data & backups",
+				items: [
+					{
+						question: "Q. Where are my notes stored?",
+						answer: "All notes are stored locally. We plan to publish official documentation on storage locations and backups."
+					},
+					{
+						question: "Q. How do I move to a new PC?",
+						answer: "For now, copy the data folder manually. We plan to make migration easier in the future."
+					}
+				]
+			},
+			{
+				title: "Licensing & pricing",
+				items: [
+					{
+						question: "Q. Does it cost anything?",
+						answer: "Notly is currently free to use. If this changes, we’ll announce it on this site and in the app."
+					}
+				]
+			},
+			{
+				title: "Other",
+				items: [
+					{
+						question: "Q. Where can I report bugs or request features?",
+						answer: "Use the Contact page or open an issue on the GitHub repository."
+					}
+				]
+			}
+		]
+	}
+};
+const t = copy[locale];
 ---
 
 <Layout
-	title="よくある質問 - Notly"
-	description="Notlyのインストール、使い方、バックアップなどに関するよくある質問と回答です。"
+	title={t.title}
+	description={t.description}
 >
 	<ThemeToggle slot="header-right" />
 	<main class="static-page">
 		<div class="container">
 			<header class="page-header">
-				<h1>よくある質問</h1>
-				<p class="subtitle">Notly のインストールや使い方について、よくいただく質問と回答をまとめました。</p>
+				<h1>{t.headerTitle}</h1>
+				<p class="subtitle">{t.headerSubtitle}</p>
 			</header>
 
-			<section class="faq-section">
-				<h2>インストール・動作環境</h2>
-				<div class="qa-item">
-					<h3>Q. 対応しているOSは何ですか？</h3>
-					<p>Windows / macOS / Linux に対応しています。詳細なバージョンやアーキテクチャは「ダウンロード」ページをご確認ください。</p>
-				</div>
-				<div class="qa-item">
-					<h3>Q. アプリが起動しません。</h3>
-					<p>お使いのOSが動作要件を満たしているかをご確認ください。それでも解決しない場合は、お問い合わせページからご連絡ください。</p>
-				</div>
-			</section>
-
-			<section class="faq-section">
-				<h2>データとバックアップ</h2>
-				<div class="qa-item">
-					<h3>Q. ノートのデータはどこに保存されますか？</h3>
-					<p>すべてのノートはローカル環境に保存されます。今後、保存場所やバックアップ方法を公式ドキュメントとして整備していく予定です。</p>
-				</div>
-				<div class="qa-item">
-					<h3>Q. 別のPCに引っ越すにはどうすればよいですか？</h3>
-					<p>現在は、データフォルダを手動でコピーすることで移行できます。今後、より簡単な移行方法を提供予定です。</p>
-				</div>
-			</section>
-
-			<section class="faq-section">
-				<h2>ライセンス・料金</h2>
-				<div class="qa-item">
-					<h3>Q. 利用料金はかかりますか？</h3>
-					<p>現時点では無料でご利用いただけます。将来的に変更がある場合は、このサイトおよびアプリ内で事前にお知らせします。</p>
-				</div>
-			</section>
-
-			<section class="faq-section">
-				<h2>その他</h2>
-				<div class="qa-item">
-					<h3>Q. 不具合報告や機能要望はどこから送れますか？</h3>
-					<p>お問い合わせページ、または GitHub リポジトリの Issues からご連絡ください。</p>
-				</div>
-			</section>
+			{t.sections.map((section) => (
+				<section class="faq-section">
+					<h2>{section.title}</h2>
+					{section.items.map((item) => (
+						<div class="qa-item">
+							<h3>{item.question}</h3>
+							<p>{item.answer}</p>
+						</div>
+					))}
+				</section>
+			))}
 		</div>
 	</main>
 	<Footer />
