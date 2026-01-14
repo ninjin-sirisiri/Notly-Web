@@ -2,39 +2,80 @@
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
+import { getLocale } from '../lib/i18n';
+
+const locale = getLocale(Astro.url);
+const copy = {
+	ja: {
+		title: "利用規約 - Notly",
+		description: "Notlyの利用規約。サービスの提供条件、禁止事項、免責事項について説明します。",
+		headerTitle: "利用規約",
+		headerSubtitle: "このページの内容は仮の利用規約です。正式な文面は今後策定し、更新します。",
+		sections: [
+			{
+				title: "1. 本サービスの提供",
+				text: "Notly は、ノート作成および管理を目的としたデスクトップアプリケーションです。本サービスは現状有姿で提供され、いかなる保証も行いません。"
+			},
+			{
+				title: "2. 禁止事項",
+				text: "本サービスを不正な目的で利用すること、法令や公序良俗に反する目的で利用することは禁止されています。"
+			},
+			{
+				title: "3. 免責事項",
+				text: "本サービスの利用により生じたいかなる損害に対しても、開発者は責任を負わないものとします。重要な情報のバックアップは、ユーザーご自身の責任で行ってください。"
+			},
+			{
+				title: "4. 規約の変更",
+				text: "開発者は、必要に応じて本利用規約を変更することができます。重要な変更がある場合は、本サイト上で告知します。"
+			}
+		]
+	},
+	en: {
+		title: "Terms of Service - Notly",
+		description: "The Notly terms of service describe availability, prohibited actions, and disclaimers.",
+		headerTitle: "Terms of Service",
+		headerSubtitle: "This is a placeholder. The official terms will be finalized and updated later.",
+		sections: [
+			{
+				title: "1. Service availability",
+				text: "Notly is a desktop application for creating and managing notes. The service is provided as-is without warranties."
+			},
+			{
+				title: "2. Prohibited actions",
+				text: "Using the service for unlawful purposes or in ways that violate public order and morals is prohibited."
+			},
+			{
+				title: "3. Disclaimer",
+				text: "The developer is not liable for any damages arising from use of the service. Please back up important information yourself."
+			},
+			{
+				title: "4. Changes to the terms",
+				text: "The developer may update these terms as needed. Significant changes will be announced on this site."
+			}
+		]
+	}
+};
+const t = copy[locale];
 ---
 
 <Layout
-	title="利用規約 - Notly"
-	description="Notlyの利用規約。サービスの提供条件、禁止事項、免責事項について説明します。"
+	title={t.title}
+	description={t.description}
 >
 	<ThemeToggle slot="header-right" />
 	<main class="static-page">
 		<div class="container">
 			<header class="page-header">
-				<h1>利用規約</h1>
-				<p class="subtitle">このページの内容は仮の利用規約です。正式な文面は今後策定し、更新します。</p>
+				<h1>{t.headerTitle}</h1>
+				<p class="subtitle">{t.headerSubtitle}</p>
 			</header>
 
-			<section class="section">
-				<h2>1. 本サービスの提供</h2>
-				<p>Notly は、ノート作成および管理を目的としたデスクトップアプリケーションです。本サービスは現状有姿で提供され、いかなる保証も行いません。</p>
-			</section>
-
-			<section class="section">
-				<h2>2. 禁止事項</h2>
-				<p>本サービスを不正な目的で利用すること、法令や公序良俗に反する目的で利用することは禁止されています。</p>
-			</section>
-
-			<section class="section">
-				<h2>3. 免責事項</h2>
-				<p>本サービスの利用により生じたいかなる損害に対しても、開発者は責任を負わないものとします。重要な情報のバックアップは、ユーザーご自身の責任で行ってください。</p>
-			</section>
-
-			<section class="section">
-				<h2>4. 規約の変更</h2>
-				<p>開発者は、必要に応じて本利用規約を変更することができます。重要な変更がある場合は、本サイト上で告知します。</p>
-			</section>
+			{t.sections.map((section) => (
+				<section class="section">
+					<h2>{section.title}</h2>
+					<p>{section.text}</p>
+				</section>
+			))}
 		</div>
 	</main>
 	<Footer />

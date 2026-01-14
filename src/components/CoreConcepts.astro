@@ -1,21 +1,44 @@
 ---
-const concepts = [
-  {
-    title: "習慣化を支える",
-    description: "「書きたいときだけ」ではなく、「毎日続けられる習慣」としてデザインされています。",
-    icon: "📅"
-  },
-  {
-    title: "完全オフライン",
-    description: "データは全てローカルに保存。クラウド連携なしで、あなたのプライバシーを守ります。",
-    icon: "🔒"
-  },
-  {
-    title: "軽量・高速",
-    description: "Tauri + SQLiteによるネイティブ実装。ブラウザアプリにはない軽快な動作を実現。",
-    icon: "⚡"
-  }
-];
+import { getLocale } from '../lib/i18n';
+
+const locale = getLocale(Astro.url);
+const conceptsByLocale = {
+  ja: [
+    {
+      title: "習慣化を支える",
+      description: "「書きたいときだけ」ではなく、「毎日続けられる習慣」としてデザインされています。",
+      icon: "📅"
+    },
+    {
+      title: "完全オフライン",
+      description: "データは全てローカルに保存。クラウド連携なしで、あなたのプライバシーを守ります。",
+      icon: "🔒"
+    },
+    {
+      title: "軽量・高速",
+      description: "Tauri + SQLiteによるネイティブ実装。ブラウザアプリにはない軽快な動作を実現。",
+      icon: "⚡"
+    }
+  ],
+  en: [
+    {
+      title: "Built for habits",
+      description: "Designed to help you keep writing every day, not just when inspiration strikes.",
+      icon: "📅"
+    },
+    {
+      title: "Fully offline",
+      description: "All data stays on your device. No cloud required, and your privacy stays yours.",
+      icon: "🔒"
+    },
+    {
+      title: "Lightweight & fast",
+      description: "Native performance with Tauri + SQLite for the speed browsers can't match.",
+      icon: "⚡"
+    }
+  ]
+};
+const concepts = conceptsByLocale[locale];
 ---
 
 <section class="concepts">

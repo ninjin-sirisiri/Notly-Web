@@ -2,27 +2,51 @@
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
+import { getLocale } from '../lib/i18n';
+
+const locale = getLocale(Astro.url);
+const copy = {
+	ja: {
+		title: "お問い合わせ - Notly",
+		description: "Notlyに関する不具合報告、機能要望、その他のお問い合わせはこちらから。",
+		headerTitle: "お問い合わせ",
+		headerSubtitle: "不具合報告や機能のご要望などがありましたら、以下の方法でご連絡ください。",
+		sectionTitle: "GitHub Issues",
+		sectionText: "開発は GitHub 上で公開されています。不具合報告や機能要望は、以下のリポジトリの Issues から登録できます。",
+		linkText: "Notly GitHub リポジトリ"
+	},
+	en: {
+		title: "Contact - Notly",
+		description: "Report bugs, request features, or get in touch about Notly.",
+		headerTitle: "Contact",
+		headerSubtitle: "If you have bug reports or feature requests, reach out using the method below.",
+		sectionTitle: "GitHub Issues",
+		sectionText: "Development happens on GitHub. You can file bugs or feature requests in the repository Issues.",
+		linkText: "Notly GitHub repository"
+	}
+};
+const t = copy[locale];
 ---
 
 <Layout
-	title="お問い合わせ - Notly"
-	description="Notlyに関する不具合報告、機能要望、その他のお問い合わせはこちらから。"
+	title={t.title}
+	description={t.description}
 >
 	<ThemeToggle slot="header-right" />
 	<main class="static-page">
 		<div class="container">
 			<header class="page-header">
-				<h1>お問い合わせ</h1>
-				<p class="subtitle">不具合報告や機能のご要望などがありましたら、以下の方法でご連絡ください。</p>
+				<h1>{t.headerTitle}</h1>
+				<p class="subtitle">{t.headerSubtitle}</p>
 			</header>
 
 			<section class="section">
-				<h2>GitHub Issues</h2>
+				<h2>{t.sectionTitle}</h2>
 				<p>
-					開発は GitHub 上で公開されています。不具合報告や機能要望は、以下のリポジトリの Issues から登録できます。
+					{t.sectionText}
 				</p>
 				<p>
-					<a href="https://github.com/ninjin-sirisiri/Notly" target="_blank" rel="noopener noreferrer" class="link">Notly GitHub リポジトリ</a>
+					<a href="https://github.com/ninjin-sirisiri/Notly" target="_blank" rel="noopener noreferrer" class="link">{t.linkText}</a>
 				</p>
 			</section>
 		</div>
